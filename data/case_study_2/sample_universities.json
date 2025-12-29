@@ -1,0 +1,12 @@
+[
+  {"name": "University of Oxford", "country": "United Kingdom", "alpha_two_code": "GB", "web_pages": ["http://www.ox.ac.uk/"], "state-province": null},
+  {"name": "University of Cambridge", "country": "United Kingdom", "alpha_two_code": "GB", "web_pages": ["http://www.cam.ac.uk/"], "state-province": null},
+  {"name": "Imperial College London", "country": "United Kingdom", "alpha_two_code": "GB", "web_pages": ["http://www.imperial.ac.uk/"], "state-province": null},
+  {"name": "Sorbonne University", "country": "France", "alpha_two_code": "FR", "web_pages": ["http://www.sorbonne-universite.fr/"], "state-province": null},
+  {"name": "École Normale Supérieure", "country": "France", "alpha_two_code": "FR", "web_pages": ["http://www.ens.fr/"], "state-province": null},
+  {"name": "Tsinghua University", "country": "China", "alpha_two_code": "CN", "web_pages": ["http://www.tsinghua.edu.cn/"], "state-province": null},
+  {"name": "Peking University", "country": "China", "alpha_two_code": "CN", "web_pages": ["http://www.pku.edu.cn/"], "state-province": null},
+  {"name": "Harvard University", "country": "United States", "alpha_two_code": "US", "web_pages": ["http://www.harvard.edu/"], "state-province": "Massachusetts"},
+  {"name": "Stanford University", "country": "United States", "alpha_two_code": "US", "web_pages": ["http://www.stanford.edu/"], "state-province": "California"},
+  {"name": "MIT", "country": "United States", "alpha_two_code": "US", "web_pages": ["http://web.mit.edu/"], "state-province": "Massachusetts"}
+]

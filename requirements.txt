@@ -1,0 +1,30 @@
+# Requirements for Docker image to replicate Databricks Runtime 14.3 LTS
+# Reference: https://docs.databricks.com/aws/en/release-notes/runtime/14.3lts
+
+# Core Spark & Delta
+pyspark==3.5.0
+delta-spark==3.1.0
+
+# Data Processing (DBR 14.3 LTS versions)
+pandas==1.5.3
+numpy==1.23.5
+pyarrow==14.0.1
+scipy==1.10.0
+
+# ML Libraries (DBR 14.3 LTS versions)
+scikit-learn==1.1.1
+matplotlib==3.7.0
+
+# Development Tools
+jupyter
+ipython
+black
+pylint
+
+# Testing
+pytest>=7.0.0
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.4.14
+mkdocs-material-extensions==1.3.1

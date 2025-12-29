@@ -1,0 +1,204 @@
+/* Billigence Brand Customization */
+
+/* Primary Brand Colors */
+:root {
+  --billigence-red: #be1e2d;
+  --billigence-dark-red: #9a1824;
+  --billigence-blue: #0170B9;
+  --billigence-dark-gray: #333333;
+  --billigence-light-gray: #F5F5F5;
+  --billigence-charcoal: #3a3a3a;
+}
+
+/* Override Material theme colors for light mode */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--billigence-red);
+  --md-primary-fg-color--light: #cf2533;
+  --md-primary-fg-color--dark: var(--billigence-dark-red);
+  --md-accent-fg-color: var(--billigence-red);
+  --md-accent-fg-color--transparent: rgba(190, 30, 45, 0.1);
+}
+
+/* Override Material theme colors for dark mode */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--billigence-red);
+  --md-primary-fg-color--light: #cf2533;
+  --md-primary-fg-color--dark: var(--billigence-dark-red);
+  --md-accent-fg-color: var(--billigence-red);
+}
+
+/* Header customization */
+.md-header {
+  background-color: var(--billigence-red);
+}
+
+/* Navigation tabs */
+.md-tabs {
+  background-color: var(--billigence-dark-red);
+}
+
+/* Links */
+.md-content a {
+  color: var(--billigence-red);
+}
+
+.md-content a:hover {
+  color: var(--billigence-dark-red);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.md-button {
+  background-color: var(--billigence-red);
+  border-color: var(--billigence-red);
+}
+
+.md-button:hover {
+  background-color: var(--billigence-dark-red);
+  border-color: var(--billigence-dark-red);
+}
+
+.md-button--primary {
+  background-color: var(--billigence-red);
+  border-color: var(--billigence-red);
+  color: white;
+}
+
+.md-button--primary:hover {
+  background-color: var(--billigence-dark-red);
+}
+
+/* Code blocks */
+.md-typeset code {
+  background-color: var(--billigence-light-gray);
+  color: var(--billigence-dark-gray);
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--billigence-light-gray);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--billigence-red);
+  color: white;
+  font-weight: 700;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--billigence-light-gray);
+}
+
+/* Admonitions */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--billigence-blue);
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(1, 112, 185, 0.1);
+  border-color: var(--billigence-blue);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--billigence-red);
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(190, 30, 45, 0.1);
+  border-color: var(--billigence-red);
+}
+
+/* Search */
+.md-search__input {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.md-search__input:hover {
+  background-color: white;
+}
+
+/* Sidebar */
+.md-sidebar--primary {
+  background-color: #fafafa;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: var(--billigence-red);
+  font-weight: 700;
+}
+
+.md-nav__link:hover {
+  color: var(--billigence-red);
+}
+
+/* Professional enhancements */
+.md-typeset h1 {
+  color: var(--billigence-dark-gray);
+  border-bottom: 3px solid var(--billigence-red);
+  padding-bottom: 0.3em;
+}
+
+.md-typeset h2 {
+  color: var(--billigence-dark-gray);
+  border-bottom: 2px solid var(--billigence-light-gray);
+  padding-bottom: 0.2em;
+}
+
+/* Logo styling */
+.md-header__button.md-logo img,
+.md-logo img {
+  height: 37px;
+  width: auto;
+  max-width: 180px;
+  filter: brightness(0) invert(1); /* Make logo white in header */
+}
+
+/* Custom badges */
+.badge-success {
+  background-color: #28a745;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.badge-info {
+  background-color: var(--billigence-blue);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.badge-danger {
+  background-color: var(--billigence-red);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* Professional card styling */
+.info-card {
+  border-left: 4px solid var(--billigence-red);
+  background-color: var(--billigence-light-gray);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Footer customization */
+.md-footer {
+  background-color: var(--billigence-dark-gray);
+}
+
+.md-footer-meta {
+  background-color: var(--billigence-charcoal);
+}

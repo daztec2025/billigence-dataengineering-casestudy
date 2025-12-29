@@ -1,0 +1,26 @@
+{
+    "CompanyID": "123",
+    "CompanyInfo": [
+      {
+        "Name": "ABC Corporation",
+        "Customers": [
+          {
+            "Birth": "1991-01-05",
+	    "Email" : "carlos91@gmail.com",
+	    "Name" : "Carlos Saint",
+            "Phone": "555-5555-1234",
+	    "Role" : "Data Engineer",
+            "Place of Birth": "Madrid"
+          },
+          {
+            "Birth": "1968-01-30",
+	    "Email" : "Felipe_g@yahoo.com",
+            "Name": "Felipe Guerrero",
+	    "Phone" : "555-4444-1234",
+	    "Role" : "Business Analyst",
+            "Place of Birth": "Porto"
+          }
+        ]
+      }
+    ]
+  }

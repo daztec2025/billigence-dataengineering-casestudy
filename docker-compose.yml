@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  spark:
+    build: .
+    container_name: databricks-local
+    hostname: spark-master
+    ports:
+      - "4040:4040"  # Spark UI
+      - "8080:8080"  # Spark Master Web UI
+      - "7077:7077"  # Spark Master Port
+      - "8888:8888"  # Jupyter
+    volumes:
+      - .:/workspace
+      - spark-data:/tmp/spark-data
+    environment:
+      - SPARK_HOME=/opt/spark
+      - PYSPARK_PYTHON=python3
+      - PYSPARK_DRIVER_PYTHON=python3
+    working_dir: /workspace
+    command: bash -c "tail -f /dev/null"
+    networks:
+      - spark-network
+
+volumes:
+  spark-data:
+
+networks:
+  spark-network:
+    driver: bridge

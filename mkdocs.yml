@@ -1,0 +1,86 @@
+site_name: Billigence Data Engineering Case Studies Portfolio
+site_description: Data engineering case studies demonstrating PySpark, API integration, and database skills
+site_author: Deren Ridley
+theme:
+  name: material
+  logo: assets/Drafts-3-e1652159647416-scaled-180x37.png
+  favicon: assets/Drafts-3-e1652159647416-scaled-180x37.png
+  font:
+    text: Lato
+    code: Roboto Mono
+  palette:
+    scheme: default
+    primary: custom
+    accent: red
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  custom_dir: docs/overrides
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Case Study 1 - Retail Electronics:
+      - Overview:
+          - Project Overview: case_study_1/project-overview.md
+          - Dataset Description: case_study_1/dataset-description.md
+      - Methodology:
+          - Technology Stack: case_study_1/technology-stack.md
+          - Data Understanding: case_study_1/data-understanding.md
+          - Performance Tuning: case_study_1/performance-tuning.md
+      - Implementation:
+          - Data Loading: case_study_1/data-loading.md
+          - Data Quality Checks: case_study_1/data-quality.md
+      - Results:
+          - Top 10 Products by Revenue: case_study_1/top-products.md
+          - Top 3 Store Regions by Profit: case_study_1/top-regions.md
+      - Testing:
+          - Unit Tests: case_study_1/unit-tests.md
+  - Case Study 2 - University API:
+      - Overview: case_study_2/overview.md
+      - Implementation: case_study_2/implementation.md
+      - Performance Tuning: case_study_2/performance-tuning.md
+      - Results: case_study_2/results.md
+      - Database Output: case_study_2/database-output.md
+      - Testing:
+          - Unit Tests: case_study_2/unit-tests.md
+  - Case Study 3 - Customer Data Security:
+      - Overview: case_study_3/overview.md
+      - Implementation: case_study_3/implementation.md
+      - Performance Tuning: case_study_3/performance-tuning.md
+      - Results: case_study_3/results.md
+      - Security: case_study_3/security.md
+      - Testing:
+          - Unit Tests: case_study_3/unit-tests.md
+  - Appendix:
+      - Running the Project: appendix/how-to-run.md
+      - Data Files Review: appendix/data-files-review.md
+      - SQL Scripts: appendix/sql-scripts.md
+
+repo_name: LocalSpark
+docs_dir: docs
+site_dir: site
