@@ -123,9 +123,33 @@ All Excel files are duplicates of their CSV counterparts:
 
 ## Data Source
 
-**Primary Source:** Hipolabs University API (`http://universities.hipolabs.com/search`)
+**Original Source:** Hipolabs University API (`http://universities.hipolabs.com/search`)
 
-The analysis fetches data directly from the REST API. Local files serve as fallback and test data.
+**Current Source:** Local JSON file (API dump)
+
+## API Reliability Issues
+
+During development, the Hipolabs University API exhibited several reliability problems:
+
+| Issue | Description |
+|-------|-------------|
+| **Truncated Responses** | API returns incomplete JSON data, cutting off mid-string |
+| **JSON Parse Errors** | Responses fail to parse with `JSONDecodeError: Unterminated string` |
+| **Inconsistent Data** | Different responses on consecutive calls |
+| **No Pagination** | Single endpoint returns entire dataset (~2MB), prone to timeout |
+
+**Example Error Encountered:**
+```
+json.decoder.JSONDecodeError: Unterminated string starting at:
+line 1 column 110766 (char 110765)
+```
+
+**Resolution:** The API was successfully called once to obtain the complete dataset, which was then saved locally as `universities_raw.json`. This ensures:
+
+1. Consistent, reproducible analysis results
+2. No dependency on external API availability
+3. Faster execution (local file read vs network call)
+4. Reliable CI/CD pipeline execution
 
 ## Data Files
 
@@ -149,11 +173,15 @@ The analysis fetches data directly from the REST API. Local files serve as fallb
     "state-province": null
   }
   ```
-- **Why This File Exists:**
-  - The Hipolabs API (`http://universities.hipolabs.com/search`) was not working reliably during development
-  - To ensure consistent and reproducible results, the API response was dumped to this JSON file
-  - The analysis script uses this local file as the primary data source, with the API as an alternative
-  - Contains the full global university dataset (~10,000+ records from 200+ countries)
+- **How This File Was Created:**
+  1. Called Hipolabs API endpoint: `GET http://universities.hipolabs.com/search`
+  2. Received complete JSON response (~10,000+ university records)
+  3. Saved response to `data/case_study_2/universities_raw.json`
+  4. Validated JSON integrity (complete, parseable)
+- **Contents:**
+  - Universities from 200+ countries worldwide
+  - Fields: name, country, alpha_two_code, web_pages, domains, state-province
+  - Data snapshot date: December 2024
 
 ### sample_universities.json (TEST DATA)
 
