@@ -4,7 +4,7 @@ site_author: Deren Ridley
 theme:
   name: material
   logo: assets/Drafts-3-e1652159647416-scaled-180x37.png
-  favicon: assets/Drafts-3-e1652159647416-scaled-180x37.png
+  favicon: assets/favicon.png
   font:
     text: Lato
     code: Roboto Mono
