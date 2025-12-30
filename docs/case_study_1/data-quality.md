@@ -20,7 +20,7 @@ Comprehensive data quality validation was performed on all datasets before analy
 **Objective:** Ensure no critical data is missing
 
 **Results:**
-- 521,613 transaction records analyzed
+- 521,612 transaction records analyzed
 - Zero null values across all 10 columns
 - 100% data completeness
 
@@ -118,8 +118,8 @@ All validation code is in [scripts/case_study_1_analysis.py](../../scripts/case_
 
 | Metric | Value |
 |--------|-------|
-| Total Transactions | 521,613 |
-| Total Stores | 197 |
-| Total Products | 1,096 |
+| Total Transactions | 521,612 |
+| Total Stores | 196 |
+| Total Products | 1,095 |
 | Date Range | 2021-08-01 to 2022-12-31 |
 | Analysis Period | 1.5 years |

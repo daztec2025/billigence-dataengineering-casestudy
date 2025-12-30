@@ -12,8 +12,8 @@ Analysis of retail electronics transaction data to identify top-performing produ
 ## Data Scope
 
 - 521,612 transactions analyzed
-- 197 stores across multiple regions
-- 1,096 unique products
+- 196 stores across multiple regions
+- 1,095 unique products
 - Time period: August 2021 - December 2022
 
 ## Technology Stack

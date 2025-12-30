@@ -28,8 +28,8 @@ This Docker image can be run on any local Docker environment or cloud platform. 
 ## Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/your-repo/LocalSpark.git
-cd LocalSpark
+git clone https://github.com/daztec2025/billigence-dataengineering-casestudy.git
+cd billigence-dataengineering-casestudy
 ```
 
 ---

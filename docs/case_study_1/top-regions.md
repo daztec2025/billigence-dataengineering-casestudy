@@ -80,6 +80,6 @@ ORDER BY total_profit DESC;
 - `unique_customers` - Number of unique customers
 
 **Data Summary:**
-- Total transactions analyzed: 521,613
-- Total stores: 197
+- Total transactions analyzed: 521,612
+- Total stores: 196
 - Analysis period: August 2021 - December 2022
