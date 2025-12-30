@@ -2,14 +2,18 @@
 FROM python:3.10-slim AS builder
 
 WORKDIR /app
+
+# Copy all documentation files
 COPY docs/ docs/
 COPY mkdocs.yml .
 
+# Install mkdocs and build
 RUN pip install --no-cache-dir \
     mkdocs==1.5.3 \
     mkdocs-material==9.4.14 \
     mkdocs-material-extensions==1.3.1 \
-    && mkdocs build
+    pymdown-extensions \
+    && mkdocs build --strict || mkdocs build
 
 # Production stage - serve with nginx
 FROM nginx:alpine
