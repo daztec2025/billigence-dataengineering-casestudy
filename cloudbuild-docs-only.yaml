@@ -5,9 +5,9 @@ steps:
     args:
       - "build"
       - "-t"
-      - "gcr.io/$PROJECT_ID/localspark-docs:$COMMIT_SHA"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:$COMMIT_SHA"
       - "-t"
-      - "gcr.io/$PROJECT_ID/localspark-docs:latest"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:latest"
       - "-f"
       - "Dockerfile.docs"
       - "."
@@ -15,9 +15,18 @@ steps:
   # Step 2: Push docs image
   - name: "gcr.io/cloud-builders/docker"
     id: "push-docs"
-    args: ["push", "--all-tags", "gcr.io/$PROJECT_ID/localspark-docs"]
+    args:
+      - "push"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:$COMMIT_SHA"
 
-  # Step 3: Deploy docs to Cloud Run Service
+  # Step 3: Push latest tag
+  - name: "gcr.io/cloud-builders/docker"
+    id: "push-docs-latest"
+    args:
+      - "push"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:latest"
+
+  # Step 4: Deploy docs to Cloud Run Service
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "deploy-docs"
     entrypoint: "gcloud"
@@ -26,7 +35,7 @@ steps:
       - "deploy"
       - "localspark-docs"
       - "--image"
-      - "gcr.io/$PROJECT_ID/localspark-docs:$COMMIT_SHA"
+      - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:$COMMIT_SHA"
       - "--region"
       - "us-central1"
       - "--platform"
@@ -47,5 +56,5 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 images:
-  - "gcr.io/$PROJECT_ID/localspark-docs:$COMMIT_SHA"
-  - "gcr.io/$PROJECT_ID/localspark-docs:latest"
+  - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:$COMMIT_SHA"
+  - "us-central1-docker.pkg.dev/$PROJECT_ID/localspark/docs:latest"
