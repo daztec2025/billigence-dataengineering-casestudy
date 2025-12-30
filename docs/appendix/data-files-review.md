@@ -131,12 +131,12 @@ The analysis fetches data directly from the REST API. Local files serve as fallb
 
 | File | Size | Records | Status |
 |------|------|---------|--------|
-| universities_raw.json | 2.1 MB | ~10,000+ | API Cache/Fallback |
+| universities_raw.json | 2.1 MB | ~10,000+ | PRIMARY (API Dump) |
 | sample_universities.json | 1.5 KB | 10 | Test Data |
 
-### universities_raw.json (FALLBACK)
+### universities_raw.json (PRIMARY)
 
-- **Purpose:** Cached copy of API response for offline execution
+- **Purpose:** Complete university dataset dumped from the Hipolabs API
 - **Format:** JSON array of university objects
 - **Schema:**
   ```json
@@ -149,11 +149,11 @@ The analysis fetches data directly from the REST API. Local files serve as fallb
     "state-province": null
   }
   ```
-- **Notes:**
-  - Primary data comes from live API call
-  - This file is used when API is unavailable (network issues, offline execution)
-  - Contains full global university dataset (~10,000+ records)
-  - File is regenerated each time the API is successfully called
+- **Why This File Exists:**
+  - The Hipolabs API (`http://universities.hipolabs.com/search`) was not working reliably during development
+  - To ensure consistent and reproducible results, the API response was dumped to this JSON file
+  - The analysis script uses this local file as the primary data source, with the API as an alternative
+  - Contains the full global university dataset (~10,000+ records from 200+ countries)
 
 ### sample_universities.json (TEST DATA)
 
@@ -276,10 +276,10 @@ All primary data files have been validated:
 
 | Requirement | Source |
 |-------------|--------|
-| University Data | API: `http://universities.hipolabs.com/search` |
-| Fallback | Local: `universities_raw.json` |
+| University Data | Local: `universities_raw.json` (dumped from API) |
+| Alternative | API: `http://universities.hipolabs.com/search` |
 
-**Status:** API integration with fallback implemented.
+**Status:** The Hipolabs API was not working reliably during development, so the API response was dumped to a local JSON file. The analysis uses this local file as the primary data source to ensure consistent, reproducible results.
 
 ### Case Study 3 Requirements
 
