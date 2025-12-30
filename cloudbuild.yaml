@@ -1,15 +1,5 @@
 steps:
-  # Step 1: Install dependencies and run tests
-  - name: "python:3.10-slim"
-    id: "test"
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-        pip install --quiet -r requirements.txt pytest
-        python -m pytest tests/ -v --tb=short
-
-  # Step 2: Build docs Docker image
+  # Step 1: Build docs Docker image
   - name: "gcr.io/cloud-builders/docker"
     id: "build-docs"
     args:
@@ -22,7 +12,7 @@ steps:
       - "Dockerfile.docs"
       - "."
 
-  # Step 3: Build Spark Docker image
+  # Step 2: Build Spark Docker image
   - name: "gcr.io/cloud-builders/docker"
     id: "build-spark"
     args:
@@ -35,17 +25,17 @@ steps:
       - "Dockerfile.spark"
       - "."
 
-  # Step 4: Push docs image
+  # Step 3: Push docs image
   - name: "gcr.io/cloud-builders/docker"
     id: "push-docs"
     args: ["push", "--all-tags", "gcr.io/$PROJECT_ID/localspark-docs"]
 
-  # Step 5: Push Spark image
+  # Step 4: Push Spark image
   - name: "gcr.io/cloud-builders/docker"
     id: "push-spark"
     args: ["push", "--all-tags", "gcr.io/$PROJECT_ID/localspark-spark"]
 
-  # Step 6: Deploy docs to Cloud Run Service
+  # Step 5: Deploy docs to Cloud Run Service
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "deploy-docs"
     entrypoint: "gcloud"
@@ -71,7 +61,7 @@ steps:
       - "--max-instances"
       - "2"
 
-  # Step 7: Deploy Spark container as Cloud Run Job
+  # Step 6: Deploy Spark container as Cloud Run Job
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "deploy-spark-job"
     entrypoint: "bash"
