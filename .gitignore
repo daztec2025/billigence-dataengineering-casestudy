@@ -42,4 +42,6 @@ Thumbs.db
 
 # GCP
 .gcloudignore
-.claude/settings.local.json
+
+# Local configuration
+.local/
